@@ -1,9 +1,25 @@
-define(function() {
-	function Utils() {
+/**
+ * Created by shenlisha on 2018/9/28.
+ */
+import _ from '../lib/underscore'
 
-	}
+function Utils() {
+	this.flatten = function(obj) {
+		var newObject = {};
+		for (var i in obj) {
+			if (_.isObject(obj[i])) {
+				var object = this.flatten(obj[i]);
+				for (var j in object) {
+					newObject[i + '.' + j] = object[j];
+				}
+			} else {
+				newObject[i] = obj[i];
+			}
+		}
+		return newObject;
+	};
 
-	Utils.prototype.flattenObjectToString = function(obj) {
+	this.flattenObjectToString = function(obj) {
 		var path = [],
 			nodes = {},
 			parseObject = function(obj) {
@@ -22,7 +38,8 @@ define(function() {
 		parseObject(obj);
 		return nodes;
 	};
-	Utils.prototype.flattenObjectToString2 = function(obj) {
+
+	this.flattenObjectToString2 = function(obj) {
 		var newObject = {};
 		for (var attr in obj) {
 			if (obj[attr] instanceof Object) {
@@ -36,8 +53,17 @@ define(function() {
 		}
 		return newObject
 	};
-	return Utils
-});
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

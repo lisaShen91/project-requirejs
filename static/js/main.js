@@ -1,14 +1,5 @@
-/**
- * Created by shenlisha on 2018/9/25.
- */
-require.config({
-	baseUrl: 'static/js',
-	paths: {
-		'underscore': 'lib/underscore'
-	},
-	shim: {
-		'underscore': {
-			exports: '_'
-		}
-	}
-});
+import a from 'static/js/pages/test.js'
+
+console.log(a.name);
+const b = 1;
+console.log(b);

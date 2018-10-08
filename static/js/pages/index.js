@@ -1,18 +1,6 @@
 /**
- * Created by shenlisha on 2018/9/29.
+ * Created by shenlisha on 2018/9/30.
  */
+import a from 'static/js/pages/test.js'
 
-require([
-	'lib/utils'
-], function(Utils) {
-	var utils = new Utils();
-	var obj = {
-		a:1,
-		b: {
-			bb: 1
-		}
-	};
-	var flattenObj = utils.flatten(obj);
-	console.log(flattenObj);
-});
-
+console.log(a.name);
